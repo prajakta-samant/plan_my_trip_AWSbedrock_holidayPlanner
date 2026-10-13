@@ -1,0 +1,27 @@
+[project]
+name = "plan_my_trip"
+version = "0.1.0"
+description = "plan_my_trip using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "boto3>=1.43.106",
+    "crewai[tools]>=1.15.22,<2.0.0",
+    "streamlit>=1.64.0",
+]
+
+[project.scripts]
+plan_my_trip = "plan_my_trip.main:run"
+run_crew = "plan_my_trip.main:run"
+train = "plan_my_trip.main:train"
+replay = "plan_my_trip.main:replay"
+test = "plan_my_trip.main:test"
+run_with_trigger = "plan_my_trip.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+project_id = "bd349874-afad-4122-b290-1d2867488ae8"
